@@ -1,0 +1,39 @@
+﻿@model HotelBooking.ViewModels.HotelViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    .checked {
+        color: orange;
+    }
+</style>
+<div class="row">
+    @foreach (var item in Model.Hotels)
+    {
+    <div class="col m-3">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" height="200" src="@Html.DisplayFor(modelItem => item.PhotoUrl)" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">
+                    @Html.DisplayFor(modelItem => item.Name)
+                </h5>
+                <p class="card-text">
+                    @for (int i = 0; i < item.StarRating; i++)
+                    {
+                        <span class="fa fa-star checked"></span>
+                    }
+                    @for (int i = 0; i < 5 - item.StarRating; i++)
+                    {
+                        <span class="fa fa-star "></span>
+                    }
+
+                </p>
+                <a class="btn btn-primary" href="/Hotel/Details/@item.HotelId">More informations</a>
+            </div>
+        </div>
+    </div>
+    }
+</div>
+ 
