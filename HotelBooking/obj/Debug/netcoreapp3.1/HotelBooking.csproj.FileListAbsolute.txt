@@ -148,3 +148,13 @@ C:\Users\21650\source\repos\HotelBooking\HotelBooking\obj\Debug\netcoreapp3.1\Ra
 C:\Users\21650\source\repos\HotelBooking\HotelBooking\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\21650\source\repos\HotelBooking\HotelBooking\obj\Debug\netcoreapp3.1\Razor\Views\Hotel\Details.cshtml.g.cs
 C:\Users\21650\source\repos\HotelBooking\HotelBooking\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\21650\source\repos\HotelBooking\HotelBooking\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\21650\source\repos\HotelBooking\HotelBooking\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\21650\source\repos\HotelBooking\HotelBooking\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\21650\source\repos\HotelBooking\HotelBooking\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\21650\source\repos\HotelBooking\HotelBooking\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\21650\source\repos\HotelBooking\HotelBooking\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\21650\source\repos\HotelBooking\HotelBooking\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\21650\source\repos\HotelBooking\HotelBooking\obj\Debug\netcoreapp3.1\Razor\Views\Booking\create.cshtml.g.cs
+C:\Users\21650\source\repos\HotelBooking\HotelBooking\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutForLoggedIn.cshtml.g.cs
+C:\Users\21650\source\repos\HotelBooking\HotelBooking\obj\Debug\netcoreapp3.1\Razor\Views\Account\Logout.cshtml.g.cs

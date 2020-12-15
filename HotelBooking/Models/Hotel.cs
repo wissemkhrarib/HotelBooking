@@ -14,7 +14,7 @@ namespace HotelBooking.Models
         public string Description { get; set; }
 
         public string PhotoUrl { get; set; }
-        public List<Image> Images { get; set; }
+        public IEnumerable<Image> Images { get; set; }
 
 
     }

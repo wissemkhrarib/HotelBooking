@@ -11,27 +11,18 @@
             @Model.Hotel.Name
         </h1>
         <p class="text-muted">City : @Model.Hotel.City </p>
-        <p class="card-text">
-            @for (int i = 0; i < Model.Hotel.StarRating; i++)
-            {
-                <span class="fa fa-star checked"></span>
-            }
-            @for (int i = 0; i < 5 - Model.Hotel.StarRating; i++)
-            {
-                <span class="fa fa-star"></span>
-            }
-        </p>
+        <button class="btn btn-success btn-user btn-block"> Book Now </button>
     </div>
     <div class="col-7">
-        <h1 class="text-primary">Descripetion</h1>
+        <h1 class="text-primary">Description</h1>
         <p>@Model.Hotel.Description</p>
+
     </div>
 </div>
 <div class="row">
     @foreach(Image image in Model.Hotel.Images)
     {
-        <div class="col">
-            <img src="@image.ImageUrl" class="rounded" height="200"/>
-        </div>
+        <img src="@image.ImageUrl" class="row m-2 rounded" width="200" height="200"/>
     }
 </div>
+

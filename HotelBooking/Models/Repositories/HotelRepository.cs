@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -27,7 +28,7 @@ namespace HotelBooking.Models.Repositories
 
         public Hotel Get(int id)
         {
-            return appDbContext.Hotels.FirstOrDefault(h => h.HotelId == id);
+            return appDbContext.Hotels.Include(h => h.Images).FirstOrDefault(h => h.HotelId == id);
         }
 
         public IEnumerable<Hotel> GetAll()

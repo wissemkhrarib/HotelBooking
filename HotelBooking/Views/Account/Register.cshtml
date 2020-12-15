@@ -1,0 +1,103 @@
+﻿@{
+    Layout = null;
+}
+@model LoginViewModel
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Register</title>
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/sb-admin-2.css" rel="stylesheet" />
+    <!-- Custom fonts for this template-->
+    <link href="~/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+
+</head>
+
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-5">
+                        <script src="~/js/lottie-player3.js"></script>
+                        <lottie-player src="https://assets3.lottiefiles.com/private_files/lf30_YaAfGA.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4 text-success">Create an Account!</h1>
+                            </div>
+                            <form asp-controller="Account" asp-action="Register" method="post" role="form" class="user">
+                                <div class="form-group">
+                                    <label asp-for="UserName" class="text-primary">User Name</label>
+                                    <div class="col-md-10">
+                                        <input asp-for="UserName" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter your username...">
+                                        <span asp-validation-for="UserName" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Password" class="text-primary">Password</label>
+                                    <div class="col-md-10">
+                                        <input asp-for="Password" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter your password">
+                                        <span asp-validation-for="Password" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Email" class="text-primary">Email</label>
+                                    <div class="col-md-10">
+                                        <input asp-for="Email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter your email">
+                                        <span asp-validation-for="Email" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label asp-for="PhoneNumber" class="text-primary">Phone Number</label>
+                                    <div class="col-md-10">
+                                        <input asp-for="PhoneNumber" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter your Phone Number">
+                                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary btn-user btn-block"> Register </button>
+
+                            </form>
+                            <a asp-controller="Hotel" asp-action="Index" class="btn btn-outline-primary btn-user btn-block mt-2"> Cancel  </a>
+
+                            <hr>
+
+                            <div class="text-center">
+                                <a class="small" asp-action="Login">Already have an account? Login!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="~/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="~/js/sb-admin-2.min.js"></script>
+    <!-- Core plugin JavaScript-->
+</body>
+
+</html>

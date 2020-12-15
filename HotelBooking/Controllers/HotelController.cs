@@ -1,6 +1,7 @@
 ﻿using HotelBooking.Models;
 using HotelBooking.Models.Repositories;
 using HotelBooking.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -26,7 +27,7 @@ namespace HotelBooking.Controllers
             return View(hotelViewModel);
         }
 
-        // GET: HotelController/Details/5
+        // GET: HotelController/Details/
         public ActionResult Details(int id)
         {
             var hotelViewModel = new HotelViewModel();
