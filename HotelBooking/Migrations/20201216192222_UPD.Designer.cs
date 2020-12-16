@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelBooking.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20201215122112_booking")]
-    partial class booking
+    [Migration("20201216192222_UPD")]
+    partial class UPD
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -31,6 +31,9 @@ namespace HotelBooking.Migrations
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("HotelId")
+                        .HasColumnType("int");
+
                     b.Property<int>("NumberOfDays")
                         .HasColumnType("int");
 
@@ -40,10 +43,12 @@ namespace HotelBooking.Migrations
                     b.Property<string>("PaymentType")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
+                    b.Property<float>("Price")
+                        .HasColumnType("real");
 
                     b.HasKey("BookingId");
+
+                    b.HasIndex("HotelId");
 
                     b.ToTable("Bookings");
                 });
@@ -292,6 +297,15 @@ namespace HotelBooking.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("HotelBooking.Models.Booking", b =>
+                {
+                    b.HasOne("HotelBooking.Models.Hotel", "Hotel")
+                        .WithMany()
+                        .HasForeignKey("HotelId");
+
+                    b.Navigation("Hotel");
                 });
 
             modelBuilder.Entity("HotelBooking.Models.Image", b =>

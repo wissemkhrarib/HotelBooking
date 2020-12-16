@@ -162,3 +162,4 @@ C:\Users\21650\source\repos\HotelBooking\HotelBooking\obj\Debug\netcoreapp3.1\Ra
 C:\Users\21650\source\repos\HotelBooking\HotelBooking\obj\Debug\netcoreapp3.1\Razor\Views\Hotel\Delete.cshtml.g.cs
 C:\Users\21650\source\repos\HotelBooking\HotelBooking\obj\Debug\netcoreapp3.1\Razor\Views\Hotel\Edit.cshtml.g.cs
 C:\Users\21650\source\repos\HotelBooking\HotelBooking\obj\Debug\netcoreapp3.1\Razor\Views\Booking\Create.cshtml.g.cs
+C:\Users\21650\source\repos\HotelBooking\HotelBooking\obj\Debug\netcoreapp3.1\Razor\Views\Booking\Index.cshtml.g.cs

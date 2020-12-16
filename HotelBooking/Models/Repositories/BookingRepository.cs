@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace HotelBooking.Models.Repositories
 {
-    public class BookingRepository : IRepository<Booking>
+    public class BookingRepository : IBookingRepository
     {
         private readonly AppDbContext appDbContext;
 
@@ -39,9 +40,9 @@ namespace HotelBooking.Models.Repositories
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Booking> GetByCustomer(int customerId)
+        public IEnumerable<Booking> GetByCustomer(string customerId)
         {
-            return appDbContext.Bookings.Where(b => b.CustomerId == customerId);
+            return appDbContext.Bookings.Include(b=>b.Hotel).Where(b => b.CustomerId == customerId);
         }
     }
 }

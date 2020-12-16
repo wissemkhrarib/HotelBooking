@@ -13,27 +13,41 @@ namespace HotelBooking.Controllers
     [Authorize]
     public class BookingController : Controller
     {
-        private readonly IRepository<Booking> bookingRepository;
+        private readonly IBookingRepository bookingRepository;
         private readonly IRepository<Hotel> hotelRepository;
+        private readonly UserManager<IdentityUser> userManager;
 
-        public BookingController(IRepository<Booking> bookingRepository, IRepository<Hotel> hotelRepository)
+        public BookingController(IBookingRepository bookingRepository, IRepository<Hotel> hotelRepository,UserManager<IdentityUser> userManager)
         {
             this.bookingRepository = bookingRepository;
             this.hotelRepository = hotelRepository;
+            this.userManager = userManager;
         }
-        public IActionResult Create(int HotelId)
+
+        public IActionResult Index()
+        {
+            var userId= userManager.GetUserId(HttpContext.User);
+            var bookings = bookingRepository.GetByCustomer(userId);
+            return View(bookings);
+        }
+        public IActionResult Create(int hotelId)
         {
             var booking = new Booking();
-            booking.Hotel = hotelRepository.Get(1);
+            booking.Hotel = hotelRepository.Get(hotelId);
             return View(booking);
         }
 
         [HttpPost]
         public IActionResult Create(Booking booking)
         {
-            booking.Price = booking.NumberOfDays * booking.NumberOfRooms;
+            booking.CustomerId= userManager.GetUserId(HttpContext.User);
+            booking.Hotel= hotelRepository.Get(booking.Id);
+            booking.Price = booking.NumberOfDays * booking.NumberOfRooms * booking.Hotel.Price;
             bookingRepository.Add(booking);
             return RedirectToAction("Index","Hotel");
         }
+
+
+
     }
 }

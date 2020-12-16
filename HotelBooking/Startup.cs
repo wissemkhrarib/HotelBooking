@@ -32,7 +32,7 @@ namespace HotelBooking
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
             services.AddTransient<IRepository<Hotel>, HotelRepository>();
-            services.AddTransient<IRepository<Booking>, BookingRepository>();
+            services.AddTransient<IBookingRepository, BookingRepository>();
             services.AddRazorPages();
             services.Configure<IdentityOptions>(options =>
             {
