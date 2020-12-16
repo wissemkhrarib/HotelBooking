@@ -27,6 +27,14 @@ namespace HotelBooking.Controllers
             return View(hotelViewModel);
         }
 
+        [Authorize(Roles ="Admin")]
+        public ActionResult IndexForAdmin()
+        {
+            var hotelViewModel = new HotelViewModel();
+            hotelViewModel.Hotels = hotelRepository.GetAll();
+            return View(hotelViewModel);
+        }
+
         // GET: HotelController/Details/
         public ActionResult Details(int id)
         {
@@ -35,6 +43,8 @@ namespace HotelBooking.Controllers
             return View(hotelViewModel);
         }
 
+
+        [Authorize(Roles = "Admin")]
         // GET: HotelController/Create
         public ActionResult Create()
         {
@@ -42,60 +52,49 @@ namespace HotelBooking.Controllers
         }
 
         // POST: HotelController/Create
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Hotel hotel)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            hotelRepository.Add(hotel);
+            return RedirectToAction("IndexForAdmin");
         }
 
         // GET: HotelController/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int id)
         {
-            return View();
+            var hotel = hotelRepository.Get(id);
+            return View(hotel);
         }
 
         // POST: HotelController/Edit/5
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(Hotel hotel)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            hotelRepository.Update(hotel);
+            return RedirectToAction("IndexForAdmin");
         }
 
         // GET: HotelController/Delete/5
-        public ActionResult Delete(int id)
+        [Authorize(Roles = "Admin")]
+        public ActionResult Delete(int id,Hotel h=null)
         {
-            return View();
+            var hotel = hotelRepository.Get(id);
+            return View(hotel);
         }
 
         // POST: HotelController/Delete/5
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            hotelRepository.Delete(id);
+            return RedirectToAction("IndexForAdmin");
         }
     }
 }

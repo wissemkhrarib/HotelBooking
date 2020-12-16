@@ -12,7 +12,7 @@ namespace HotelBooking.Models
         public string City { get; set; }
         public int StarRating { get; set; }
         public string Description { get; set; }
-
+        public float Price { get; set; }
         public string PhotoUrl { get; set; }
         public IEnumerable<Image> Images { get; set; }
 

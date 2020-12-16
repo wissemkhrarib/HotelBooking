@@ -1,0 +1,66 @@
+﻿@model HotelBooking.ViewModels.HotelViewModel
+
+@{
+    ViewData["Title"] = "IndexForAdmin";
+}
+
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>
+               Name
+            </th>
+            <th>
+               City
+            </th>
+            <th>
+                Star Rating
+            </th>
+            <th>
+                Price (TND)
+            </th>
+            <th>
+                Photo
+            </th>
+            <th>
+                Edit
+            </th>
+            <th>
+                Delete
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Hotels) {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.City
+            </td>
+            <td>
+                @item.StarRating
+            </td>
+            
+            <td>
+                @item.Price
+            </td>
+            <td>
+                <img class="rounded" height="150" width="150" src="@item.PhotoUrl"/>
+            </td>
+            <td>
+                    <a class="btn btn-primary" href="Edit/@item.HotelId"> Edit </a>
+            </td>
+            <td>
+                <a class="btn btn-danger" href="Delete/@item.HotelId"> Delete </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

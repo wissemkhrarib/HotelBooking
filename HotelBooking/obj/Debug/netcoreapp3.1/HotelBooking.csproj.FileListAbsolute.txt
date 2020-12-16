@@ -155,6 +155,10 @@ C:\Users\21650\source\repos\HotelBooking\HotelBooking\bin\Debug\netcoreapp3.1\Mi
 C:\Users\21650\source\repos\HotelBooking\HotelBooking\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\21650\source\repos\HotelBooking\HotelBooking\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\21650\source\repos\HotelBooking\HotelBooking\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
-C:\Users\21650\source\repos\HotelBooking\HotelBooking\obj\Debug\netcoreapp3.1\Razor\Views\Booking\create.cshtml.g.cs
 C:\Users\21650\source\repos\HotelBooking\HotelBooking\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutForLoggedIn.cshtml.g.cs
 C:\Users\21650\source\repos\HotelBooking\HotelBooking\obj\Debug\netcoreapp3.1\Razor\Views\Account\Logout.cshtml.g.cs
+C:\Users\21650\source\repos\HotelBooking\HotelBooking\obj\Debug\netcoreapp3.1\Razor\Views\Hotel\Create.cshtml.g.cs
+C:\Users\21650\source\repos\HotelBooking\HotelBooking\obj\Debug\netcoreapp3.1\Razor\Views\Hotel\IndexForAdmin.cshtml.g.cs
+C:\Users\21650\source\repos\HotelBooking\HotelBooking\obj\Debug\netcoreapp3.1\Razor\Views\Hotel\Delete.cshtml.g.cs
+C:\Users\21650\source\repos\HotelBooking\HotelBooking\obj\Debug\netcoreapp3.1\Razor\Views\Hotel\Edit.cshtml.g.cs
+C:\Users\21650\source\repos\HotelBooking\HotelBooking\obj\Debug\netcoreapp3.1\Razor\Views\Booking\Create.cshtml.g.cs

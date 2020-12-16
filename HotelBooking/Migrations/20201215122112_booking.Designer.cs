@@ -4,14 +4,16 @@ using HotelBooking.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HotelBooking.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201215122112_booking")]
+    partial class booking
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,9 +31,6 @@ namespace HotelBooking.Migrations
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("HotelId")
-                        .HasColumnType("int");
-
                     b.Property<int>("NumberOfDays")
                         .HasColumnType("int");
 
@@ -45,8 +44,6 @@ namespace HotelBooking.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("BookingId");
-
-                    b.HasIndex("HotelId");
 
                     b.ToTable("Bookings");
                 });
@@ -295,15 +292,6 @@ namespace HotelBooking.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("HotelBooking.Models.Booking", b =>
-                {
-                    b.HasOne("HotelBooking.Models.Hotel", "Hotel")
-                        .WithMany()
-                        .HasForeignKey("HotelId");
-
-                    b.Navigation("Hotel");
                 });
 
             modelBuilder.Entity("HotelBooking.Models.Image", b =>

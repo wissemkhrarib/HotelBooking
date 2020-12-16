@@ -20,8 +20,9 @@ namespace HotelBooking.Models.Repositories
             appDbContext.SaveChanges();
         }
 
-        public void Delete(Hotel hotel)
+        public void Delete(int id)
         {
+            var hotel = Get(id);
             appDbContext.Hotels.Remove(hotel);
             appDbContext.SaveChanges();
         }
@@ -42,6 +43,9 @@ namespace HotelBooking.Models.Repositories
             hotel.Name = entity.Name;
             hotel.City = entity.City;
             hotel.StarRating = entity.StarRating;
+            hotel.Price = entity.Price;
+            appDbContext.Hotels.Update(hotel);
+            appDbContext.SaveChanges();
         }
     }
 }

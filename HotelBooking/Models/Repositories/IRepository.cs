@@ -11,7 +11,7 @@ namespace HotelBooking.Models.Repositories
         void Add(TEntity entity);
         TEntity Get(int id);
         IEnumerable<TEntity> GetAll();
-        void Delete(TEntity entity);
+        void Delete(int id);
         void Update(TEntity entity);
 
     }

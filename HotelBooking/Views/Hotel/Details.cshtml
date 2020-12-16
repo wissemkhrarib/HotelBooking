@@ -11,7 +11,8 @@
             @Model.Hotel.Name
         </h1>
         <p class="text-muted">City : @Model.Hotel.City </p>
-        <button class="btn btn-success btn-user btn-block"> Book Now </button>
+        <p> Price per day (TND) : @Model.Hotel.Price </p>
+        <a class="btn btn-success btn-user btn-block" href="/Booking/Create/@Model.Hotel.HotelId"> Book Now </a>
     </div>
     <div class="col-7">
         <h1 class="text-primary">Description</h1>

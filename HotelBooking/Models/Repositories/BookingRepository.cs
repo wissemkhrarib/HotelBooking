@@ -19,7 +19,7 @@ namespace HotelBooking.Models.Repositories
             appDbContext.SaveChanges();
         }
 
-        public void Delete(Booking entity)
+        public void Delete(int id)
         {
             throw new NotImplementedException();
         }
